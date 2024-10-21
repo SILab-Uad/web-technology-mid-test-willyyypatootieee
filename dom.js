@@ -10,12 +10,12 @@
         };
         
         const password = generatePassword(length, options);
-        document.getElementById('passwordOutput').value = password; // Use value instead of textContent
+        document.getElementById('passwordOutput').value = password; 
     });
 
     // Copy to Clipboard functionality
     document.getElementById('copyBtn').addEventListener('click', () => {
-        const passwordOutput = document.getElementById('passwordOutput').value; // Use value to get text
+        const passwordOutput = document.getElementById('passwordOutput').value;
         if (passwordOutput) {
             navigator.clipboard.writeText(passwordOutput).then(() => {
                 alert('Password copied to clipboard!');
