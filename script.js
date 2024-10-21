@@ -1,26 +1,23 @@
-// TODO: Implement the password generation logic based on user input
-
 const generatePassword = (length, options) => {
-    const includeUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const includeLowercase = "abcdefghijklmnopqrstuvwxyz";
-    const includeNumbers = "0123456789";
-    const includeSpecialChars = "!@#$%^&*()";
-    
-    let charSet = "";
+    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowercase = "abcdefghijklmnopqrstuvwxyz";
+    const numbers = "0123456789";
+    const specialChars = "!@#$%^&*()";
 
-    // Build the character set based on selected options
-    if (options.includeUppercase) charSet += includeUppercase;
-    if (options.includeLowercase) charSet += includeLowercase;
-    if (options.includeNumbers) charSet += includeNumbers;
-    if (options.includeSpecialChars) charSet += includeSpecialChars;
+    let characterSet = '';
+    if (options.includeUppercase) characterSet += uppercase;
+    if (options.includeLowercase) characterSet += lowercase;
+    if (options.includeNumbers) characterSet += numbers;
+    if (options.includeSpecialChars) characterSet += specialChars;
 
-    if (charSet === "") {
-        return "Please select at least one option.";
+    if (characterSet === '') {
+        throw new Error('At least one character type must be selected.');
     }
 
-    let password = "";
+    let password = '';
     for (let i = 0; i < length; i++) {
-        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        const randomIndex = Math.floor(Math.random() * characterSet.length);
+        password += characterSet[randomIndex];
     }
 
     return password;
