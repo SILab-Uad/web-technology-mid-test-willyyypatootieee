@@ -1,18 +1,27 @@
 // TODO: Implement the password generation logic based on user input
 
 const generatePassword = (length, options) => {
-    // Character sets for password generation
-    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const lowercase = "abcdefghijklmnopqrstuvwxyz";
-    const numbers = "0123456789";
-    const specialChars = "!@#$%^&*()";
+    const includeUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const includeLowercase = "abcdefghijklmnopqrstuvwxyz";
+    const includeNumbers = "0123456789";
+    const includeSpecialChars = "!@#$%^&*()";
+    
+    let charSet = "";
 
-    // TODO: Create a variable for the character set based on selected options
+    // Build the character set based on selected options
+    if (options.includeUppercase) charSet += includeUppercase;
+    if (options.includeLowercase) charSet += includeLowercase;
+    if (options.includeNumbers) charSet += includeNumbers;
+    if (options.includeSpecialChars) charSet += includeSpecialChars;
 
-    // TODO: Generate the password based on the selected criteria
-    return generatePassword;
+    if (charSet === "") {
+        return "Please select at least one option.";
+    }
+
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+    }
+
+    return password;
 };
-
-// TODO: Add event listener to the button to call generatePassword and display the output
-
-// BONUS: Implement the copy to clipboard functionality
