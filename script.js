@@ -10,7 +10,7 @@ const generatePassword = (length, options) => {
     // TODO: Create a variable for the character set based on selected options
 
     // TODO: Generate the password based on the selected criteria
-    return password;
+    return generatePassword;
 };
 
 // TODO: Add event listener to the button to call generatePassword and display the output
