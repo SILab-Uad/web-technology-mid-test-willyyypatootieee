@@ -4,8 +4,21 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e0e7ff; /* Background color */
+    animation: flashingBackground 1s infinite;
 }
+
+@keyframes flashingBackground {
+    0% { background-color: #003cff; } /* Start with blue */
+    15% { background-color: #ff00c3; } /* Flash pink */
+    35% { background-color: #00ff91; } /* Flash green */
+    45% { background-color: #fffb00; } /* Flash yellow */
+    65% { background-color: #ff6bbd; } /* Flash yellow */
+    85% { background-color: #5decff; } /* Flash yellow */
+    95% { background-color: #000000; } /* Flash yellow */
+
+    100% { background-color: #e2970a; } /* Return to blue */
+}
+
 
 .container {
     text-align: center;
