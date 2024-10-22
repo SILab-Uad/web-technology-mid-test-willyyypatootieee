@@ -2,10 +2,12 @@
   "name": "password-generator",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register --reporter mocha-junit-reporter test/**/*.js" 
-  },
+  "test": "mocha --require @babel/register --reporter mocha-junit-reporter test/**/*.js"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
